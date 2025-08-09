@@ -237,18 +237,14 @@
   </section>
   
   <!-- Revolut Payment Section moved here before Google Form -->
-  <script>
-  function showQRCode() {
-    document.getElementById("paymentDisplay").innerHTML = '<img src="WhatsApp Image 2025-08-08 at 19.31.23_cb90c9bc.jpg" alt="Revolut QR Code">';
-  }
-  function showLink() {
-    window.open("https://revolut.me/madhugm77", "_blank");
-    document.getElementById("paymentDisplay").innerHTML = "";
-  }
-
-  // Show QR code by default on page load
-  showQRCode();
-</script>
+  <section class="section payment-section">
+    <h2>Online Payment with Revolut</h2>
+    <div class="payment-options">
+      <button onclick="showQRCode()">Show QR Code</button>
+      <button onclick="showLink()">Pay via Link</button>
+    </div>
+    <div class="payment-display" id="paymentDisplay"></div>
+  </section>
 
   <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScH4PH7W27JGF5rCnNcYw0rgWnYTJDohDcB6_MpI0YWfrCg9w/viewform?embedded=true" width="550" height="2000" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
   
@@ -305,14 +301,12 @@
       document.getElementById("paymentDisplay").innerHTML = '<img src="WhatsApp Image 2025-08-08 at 19.31.23_cb90c9bc.jpg" alt="Revolut QR Code">';
     }
     function showLink() {
-      document.getElementById("paymentDisplay").innerHTML = '<a href="https://revolut.me/madhugm77" target="_blank"><button>Pay via Revolut Link</button></a>';
+      window.open("https://revolut.me/madhugm77","_blank");
+      // Do NOT clear or change paymentDisplay here so QR code remains visible
     }
 
-    // Initialize default payment display (optional)
+    // Show QR code by default on page load
     showQRCode();
   </script>
 </body>
 </html>
-
-
-
