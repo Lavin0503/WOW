@@ -29,52 +29,6 @@
       border-bottom: 2px solid #c88;
     }
 
-    /* --- NEW: Reviews Carousel --- */
-    #reviewsCarousel {
-      background: linear-gradient(135deg, #ffb3ec, #e0c3fc);
-      padding: 20px;
-      max-width: 700px;
-      margin: 15px auto 30px auto;
-      border-radius: 20px;
-      box-shadow: 0 6px 15px rgba(204, 136, 170, 0.4);
-      color: #4c0070;
-      font-size: 1.1rem;
-      position: relative;
-      overflow: hidden;
-      user-select: none;
-    }
-
-    #reviewsCarousel .review-slide {
-      display: none;
-      text-align: center;
-      padding: 10px 20px;
-    }
-
-    #reviewsCarousel .review-slide.active {
-      display: block;
-      animation: fadeIn 1s ease forwards;
-    }
-
-    #reviewsCarousel strong {
-      display: block;
-      font-size: 1.3rem;
-      margin-bottom: 6px;
-    }
-
-    #reviewsCarousel .stars {
-      color: #ff4dc4;
-      font-size: 1.5rem;
-      margin: 8px 0;
-      user-select: none;
-    }
-
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
-
-    /* --- END reviews carousel styles --- */
-
     header {
       background: linear-gradient(135deg, #ffb3ec, #e0c3fc);
       padding: 20px;
@@ -115,27 +69,11 @@
       margin-top: 30px;
     }
 
-    .gallery-item {
-      max-width: 300px;
-      width: 100%;
-      text-align: center;
-    }
-
     .gallery img {
       border-radius: 15px;
       max-width: 300px;
       width: 100%;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      display: block;
-      margin: 0 auto;
-    }
-
-    /* New rating stars below bracelet images */
-    .gallery-item .rating-stars {
-      margin-top: 8px;
-      color: #ff4dc4;
-      font-size: 1.3rem;
-      user-select: none;
     }
 
     .price-table {
@@ -189,6 +127,24 @@
       to { opacity: 0; visibility: hidden; }
     }
 
+    .sparkle {
+      position: fixed;
+      width: 6px;
+      height: 6px;
+      background: pink;
+      border-radius: 50%;
+      pointer-events: none;
+      opacity: 0.8;
+      animation: fade 1s linear forwards;
+    }
+
+    @keyframes fade {
+      to {
+        transform: scale(2);
+        opacity: 0;
+      }
+    }
+
     /* Payment Section */
     .payment-section {
       text-align: center;
@@ -237,80 +193,6 @@
       font-size: 1.1rem;
       line-height: 1.8;
     }
-
-    /* Review & Feedback Section Styles */
-    .feedback-section form {
-      max-width: 350px;
-      margin-top: 10px;
-    }
-
-    .feedback-section input,
-    .feedback-section textarea {
-      padding: 8px;
-      border-radius: 10px;
-      border: 1px solid #c88;
-      width: 100%;
-      box-sizing: border-box;
-      font-family: inherit;
-      font-size: 1rem;
-      color: #4c0070;
-      background: #fff0fb;
-      resize: none;
-    }
-
-    .feedback-section button {
-      background: #ff7edb;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 10px;
-      margin-top: 10px;
-      cursor: pointer;
-      width: 100%;
-      font-size: 1rem;
-      transition: 0.3s;
-    }
-
-    .feedback-section button:hover {
-      background: #ff4dc4;
-    }
-
-    #starRating {
-      cursor: pointer;
-      user-select: none;
-      font-size: 1.5rem;
-      color: #ff4dc4;
-      margin-left: 5px;
-    }
-
-    .reviews-list > div {
-      background: #ffe8f6;
-      padding: 10px;
-      margin-bottom: 10px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    }
-
-    .reviews-list strong {
-      display: block;
-      margin-bottom: 5px;
-      font-size: 1.1rem;
-    }
-
-    .reviews-list p {
-      margin: 5px 0 0;
-      font-size: 1rem;
-      line-height: 1.4;
-    }
-
-    .char-counter {
-      font-size: 0.85rem;
-      color: #c88;
-      text-align: right;
-      margin-top: 3px;
-      user-select: none;
-    }
-
   </style>
 </head>
 
@@ -319,11 +201,6 @@
   <div id="top-notice">
     💳 We take card payments in person and via Gmail contact -- Cash also Accepted!
   </div>
-
-  <!-- NEW: Reviews Carousel at top -->
-  <section id="reviewsCarousel" aria-label="Customer Reviews Carousel">
-    <!-- Slides inserted dynamically -->
-  </section>
 
   <div id="cutscene">
     <img src="gold (2).png" alt="Cutscene Logo"/>
@@ -351,24 +228,11 @@
   <section class="section">
     <h2>Our Bracelets</h2>
     <div class="gallery">
-      <div class="gallery-item">
-        <img src="gold (2).png" alt="Bracelet Collection">
-      </div>
-      <div class="gallery-item">
-        <img src="Wrist of Wonders (1).png" alt="Logo Styled Bracelet">
-      </div>
-      <div class="gallery-item">
-        <img src="Pic1Loom.jpg" alt="Custom Bracelet 1">
-        
-      </div>
-      <div class="gallery-item">
-        <img src="pic2.png" alt="Custom Bracelet 2">
-        
-      </div>
-      <div class="gallery-item">
-        <img src="Color.png" alt="Custom Bracelet 3">
-       
-      </div>
+      <img src="gold (2).png" alt="Bracelet Collection">
+      <img src="Wrist of Wonders (1).png" alt="Logo Styled Bracelet">
+      <img src="Pic1Loom.jpg" alt="Custom Bracelet 1">
+      <img src="pic2.png" alt="Custom Bracelet 2">
+      <img src="Color.png" alt="Custom Bracelet 3">
     </div>
   </section>
   
@@ -427,34 +291,6 @@
     </table>
   </section>
 
-  <!-- Review & Feedback Section -->
-  <section class="section feedback-section">
-    <h2>Reviews & Feedback</h2>
-    <p>We’d love to hear your thoughts about our bracelets! 💖</p>
-
-    <form id="feedbackForm" novalidate>
-      <input type="text" id="nameInput" placeholder="Your Name" required
-        aria-label="Your Name" />
-      
-      <textarea id="messageInput" placeholder="Your Feedback" required
-        maxlength="300" aria-label="Your Feedback"></textarea>
-      <div class="char-counter" id="charCounter">300 characters remaining</div>
-      
-      <div style="margin-top:10px; font-size: 1.5rem; color: #ff4dc4;">
-        <label for="starRating">Rating: </label>
-        <span id="starRating" aria-label="Star Rating" role="slider" tabindex="0" aria-valuemin="1" aria-valuemax="5" aria-valuenow="0">
-          ☆☆☆☆☆
-        </span>
-      </div>
-
-      <button type="submit">Submit</button>
-    </form>
-
-    <div id="reviewsContainer" class="reviews-list" style="margin-top:20px;">
-      <!-- Reviews will be inserted here -->
-    </div>
-  </section>
-
   <footer>
     &copy; 2025 Wrist of Wonders — Made with love and loombands 💖
     Contact at: wristofwonders@gmail.com
@@ -465,175 +301,12 @@
       document.getElementById("paymentDisplay").innerHTML = '<img src="WhatsApp Image 2025-08-08 at 19.31.23_cb90c9bc.jpg" alt="Revolut QR Code">';
     }
     function showLink() {
-      window.open("https://revolut.me/madhugm77","_blank");
+      window.open("https://revolut.me/lavinslj18","_blank");
       // Do NOT clear or change paymentDisplay here so QR code remains visible
     }
 
     // Show QR code by default on page load
     showQRCode();
-
-    // Feedback & Review Script
-    const feedbackForm = document.getElementById("feedbackForm");
-    const reviewsContainer = document.getElementById("reviewsContainer");
-    const starRatingSpan = document.getElementById("starRating");
-    const messageInput = document.getElementById("messageInput");
-    const charCounter = document.getElementById("charCounter");
-
-    let selectedRating = 0;
-    const maxChars = 300;
-
-    // Update character counter on input
-    messageInput.addEventListener("input", () => {
-      const remaining = maxChars - messageInput.value.length;
-      charCounter.textContent = `${remaining} characters remaining`;
-    });
-
-    // Handle star hover & click
-    starRatingSpan.addEventListener("mousemove", (e) => {
-      const rect = starRatingSpan.getBoundingClientRect();
-      const relativeX = e.clientX - rect.left;
-      const starWidth = rect.width / 5;
-      const hoverRating = Math.ceil(relativeX / starWidth);
-      updateStars(hoverRating);
-    });
-
-    starRatingSpan.addEventListener("mouseleave", () => {
-      updateStars(selectedRating);
-    });
-
-    starRatingSpan.addEventListener("click", (e) => {
-      const rect = starRatingSpan.getBoundingClientRect();
-      const relativeX = e.clientX - rect.left;
-      const starWidth = rect.width / 5;
-      selectedRating = Math.ceil(relativeX / starWidth);
-      updateStars(selectedRating);
-      starRatingSpan.setAttribute('aria-valuenow', selectedRating);
-    });
-
-    // Keyboard accessible rating with left/right arrows
-    starRatingSpan.addEventListener("keydown", (e) => {
-      if(e.key === "ArrowRight" && selectedRating < 5){
-        selectedRating++;
-        updateStars(selectedRating);
-        starRatingSpan.setAttribute('aria-valuenow', selectedRating);
-      } else if(e.key === "ArrowLeft" && selectedRating > 1){
-        selectedRating--;
-        updateStars(selectedRating);
-        starRatingSpan.setAttribute('aria-valuenow', selectedRating);
-      }
-      if(e.key === "Enter" || e.key === " "){
-        e.preventDefault();
-      }
-    });
-
-    function updateStars(rating) {
-      let stars = "";
-      for(let i = 1; i <= 5; i++){
-        stars += i <= rating ? "★" : "☆";
-      }
-      starRatingSpan.textContent = stars;
-    }
-
-    // Initial stars state
-    updateStars(0);
-
-    function escapeHTML(text) {
-      const div = document.createElement("div");
-      div.textContent = text;
-      return div.innerHTML;
-    }
-
-    function saveReviews(reviews) {
-      localStorage.setItem("wowReviews", JSON.stringify(reviews));
-    }
-
-    function loadReviews() {
-      const saved = localStorage.getItem("wowReviews");
-      if(saved){
-        return JSON.parse(saved);
-      }
-      return [];
-    }
-
-    function renderReviews() {
-      const reviews = loadReviews();
-      const carousel = document.getElementById("reviewsCarousel");
-      carousel.innerHTML = ""; // Clear existing slides
-
-      if(reviews.length === 0){
-        carousel.innerHTML = `<div class="review-slide active">No reviews yet. Be the first to leave feedback! 💖</div>`;
-        reviewsContainer.innerHTML = "";
-        return;
-      }
-
-      // Render reviews for feedback section (all)
-      reviewsContainer.innerHTML = "";
-      reviews.forEach(({name, message, rating}) => {
-        const reviewDiv = document.createElement("div");
-        reviewDiv.innerHTML = `<strong>${escapeHTML(name)}</strong>
-          <div style="color:#ff4dc4; font-size:1.2rem;">${"★".repeat(rating)}${"☆".repeat(5 - rating)}</div>
-          <p>${escapeHTML(message)}</p>`;
-        reviewsContainer.appendChild(reviewDiv);
-      });
-
-      // Render carousel slides - show one review at a time
-      reviews.forEach(({name, message, rating}, i) => {
-        const slide = document.createElement("div");
-        slide.classList.add("review-slide");
-        if(i === 0) slide.classList.add("active");
-        slide.innerHTML = `
-          <strong>${escapeHTML(name)}</strong>
-          <div class="stars" aria-label="Rating: ${rating} out of 5 stars">${"★".repeat(rating)}${"☆".repeat(5 - rating)}</div>
-          <p>${escapeHTML(message)}</p>
-        `;
-        carousel.appendChild(slide);
-      });
-
-      startCarousel();
-    }
-
-    let carouselInterval;
-    function startCarousel() {
-      const slides = document.querySelectorAll("#reviewsCarousel .review-slide");
-      let index = 0;
-      clearInterval(carouselInterval);
-      carouselInterval = setInterval(() => {
-        slides[index].classList.remove("active");
-        index = (index + 1) % slides.length;
-        slides[index].classList.add("active");
-      }, 5000);
-    }
-
-    feedbackForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const name = document.getElementById("nameInput").value.trim();
-      const message = document.getElementById("messageInput").value.trim();
-      if(name === "" || message === ""){
-        alert("Please fill in your name and feedback.");
-        return;
-      }
-      if(selectedRating < 1){
-        alert("Please select a rating by clicking the stars.");
-        return;
-      }
-      if(message.length > maxChars){
-        alert(`Feedback cannot exceed ${maxChars} characters.`);
-        return;
-      }
-      const reviews = loadReviews();
-      reviews.push({name, message, rating: selectedRating});
-      saveReviews(reviews);
-      renderReviews();
-
-      // Reset form
-      feedbackForm.reset();
-      selectedRating = 0;
-      updateStars(0);
-      charCounter.textContent = `${maxChars} characters remaining`;
-    });
-
-    // Initial load
-    renderReviews();
   </script>
 </body>
 </html>
